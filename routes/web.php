@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('applications.index');
 });
+
+Route::get('/new-application', function () {
+    return view('applications.create');
+});
+
+Route::get('/deleted-list', function () {
+    return view('applications.softDelete');
+});
