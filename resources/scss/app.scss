@@ -17,7 +17,16 @@ header{
         font-size: 1.5rem;
         color: #1F571F;
     }
+    
+    nav.nav-collapse{
+        height: 0;
+        overflow: hidden;
+        transition: all 1s linear;
+    }
+}
 
+nav.nav-collapse.expand{
+    height: 30px;
 }
 
 @media screen and (min-width:576px){

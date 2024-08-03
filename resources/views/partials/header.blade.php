@@ -9,10 +9,10 @@
                     <nav>
                         <ul class="d-flex justify-content-between list-unstyled">
                             <li>
-                                <a href="#">candidature</a>
+                                <a href="#">Candidature</a>
                             </li>
                             <li>
-                                <a href="#">aggiungi</a>
+                                <a href="#">Aggiungi</a>
                             </li>
                             <li>
                                 <a href="#">Eliminati</a>
@@ -21,15 +21,15 @@
                     </nav>
                     <p class="text-center d-none d-sm-block mb-1 mt-4">Inserisci e registra le tue candidature</p>
                 </div>
-                <i class="fa-solid fa-burger"></i>
+                <i class="fa-solid fa-burger d-sm-none"></i>
             </div>
-            <nav class="d-none d-sm-none nav-collapse">
+            <nav class="d-sm-none nav-collapse">
                 <ul class="d-flex justify-content-around list-unstyled">
                     <li>
-                        <a href="#">candidature</a>
+                        <a href="#">Candidature</a>
                     </li>
                     <li>
-                        <a href="#">aggiungi</a>
+                        <a href="#">Aggiungi</a>
                     </li>
                     <li>
                         <a href="#">Eliminati</a>
@@ -44,10 +44,10 @@
     let headerHamburger = document.querySelector('header i');
     headerHamburger.addEventListener('click',function(){
         const navCollapse = document.querySelector('nav.nav-collapse');
-        if(navCollapse.classList.contains('d-none')){
-            navCollapse.classList.remove('d-none');
+        if(navCollapse.classList.contains('expand')){
+            navCollapse.classList.remove('expand');
         }else{
-            navCollapse.classList.add('d-none');
+            navCollapse.classList.add('expand');
         }
     })
 </script>
