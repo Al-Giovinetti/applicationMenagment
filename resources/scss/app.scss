@@ -23,11 +23,25 @@ header{
         overflow: hidden;
         transition: all 1s linear;
     }
+
+    nav.nav-collapse.expand{
+        height: 30px;
+    }
+    
 }
 
-nav.nav-collapse.expand{
-    height: 30px;
+div.card{
+    position: relative;
 }
+
+div.card .application-date{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
 
 @media screen and (min-width:576px){
     header img{
