@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PageController as PageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,14 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('applications.index');
-});
+Route::get('/',[PageController::class,'goToIndexPage'])->name('applications.index');
 
-Route::get('/new-application', function () {
-    return view('applications.create');
-});
+Route::get('/new-application',[PageController::class,'goToCreatePage'])->name('applications.create');
 
-Route::get('/deleted-list', function () {
-    return view('applications.softDelete');
-});
+Route::get('/deleted-list',[PageController::class,'goToSoftDeletePage'])->name('applications.softDelete');
+

@@ -9,13 +9,13 @@
                     <nav>
                         <ul class="d-flex justify-content-between list-unstyled">
                             <li>
-                                <a href="#">Candidature</a>
+                                <a href="{{ route('applications.index') }}">Candidature</a>
                             </li>
                             <li>
-                                <a href="#">Aggiungi</a>
+                                <a href="{{ route('applications.create') }}">Aggiungi</a>
                             </li>
                             <li>
-                                <a href="#">Eliminati</a>
+                                <a href="{{ route('applications.softDelete') }}">Eliminati</a>
                             </li>
                         </ul>
                     </nav>
@@ -26,13 +26,13 @@
             <nav class="d-sm-none nav-collapse">
                 <ul class="d-flex justify-content-around list-unstyled">
                     <li>
-                        <a href="#">Candidature</a>
+                        <a href="{{ route('applications.index') }}">Candidature</a>
                     </li>
                     <li>
-                        <a href="#">Aggiungi</a>
+                        <a href="{{ route('applications.create') }}">Aggiungi</a>
                     </li>
                     <li>
-                        <a href="#">Eliminati</a>
+                        <a href="{{ route('applications.softDelete') }}">Eliminati</a>
                     </li>
                 </ul> 
             </nav>
