@@ -13,8 +13,9 @@ class PageController extends Controller
         return view('applications.index', compact('applications'));
     }
 
-    public function show(){
-        
+    public function show($id){
+        $application = jobApplication::findOrFail($id);
+        return  view('applications.show',compact('application'));
     }
 
     public function create(){

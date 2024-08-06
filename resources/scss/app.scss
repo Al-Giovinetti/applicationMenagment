@@ -32,6 +32,10 @@ header{
 
 div.card{
     position: relative;
+
+    a{
+        text-decoration: none;
+    }
 }
 
 div.card .application-date{

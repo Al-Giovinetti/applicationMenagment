@@ -19,13 +19,15 @@
         @foreach ($applications as $application)
             <div class="col-12 col-md-6 col-lg-4 d-flex">
                 <div class="card p-3 pb-5 w-100 my-2">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <h5>{{ $application['agency_name'] }}</h5>
-                        <p>{{ $application['agency_place'] }}</p>
-                    </div>
-                    <p>Competenze : {{ $application['skills']}} </p>
-                    <p> {{ $application['extra_info'] }}</p>
-                    <p class="text-center application-date"> Dati di applicazione : {{ convertData($application['created_at']) }}</p>
+                    <a href="{{ route('applications.show',$application['id'])}}" class="text-dark">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5>{{ $application['agency_name'] }}</h5>
+                            <p>{{ $application['agency_place'] }}</p>
+                        </div>
+                        <p>Competenze : {{ $application['skills']}} </p>
+                        <p> {{ $application['extra_info'] }}</p>
+                        <p class="text-center application-date"> Dati di applicazione : {{ convertData($application['created_at']) }}</p>
+                    </a>
                 </div>
             </div>
         @endforeach
