@@ -15,9 +15,11 @@ use App\Http\Controllers\PageController as PageController;
 |
 */
 
-Route::get('/',[PageController::class,'goToIndexPage'])->name('applications.index');
+Route::get('/applications',[PageController::class,'index'])->name('applications.index');
 
-Route::get('/new-application',[PageController::class,'goToCreatePage'])->name('applications.create');
+Route::get('/applications/create',[PageController::class,'create'])->name('applications.create');
 
-Route::get('/deleted-list',[PageController::class,'goToSoftDeletePage'])->name('applications.softDelete');
+Route::get('/applications/softDelete',[PageController::class,'softDelete'])->name('applications.softDelete');
+
+Route::get('/applications/{application}',[PageController::class,'show'])->name('applications.show');
 

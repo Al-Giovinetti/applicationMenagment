@@ -8,17 +8,20 @@ use App\Models\jobApplication;
 
 class PageController extends Controller
 {
-    public function goToIndexPage(){
+    public function index(){
         $applications = jobApplication::orderBy('id','desc')->get();
-
         return view('applications.index', compact('applications'));
     }
 
-    public function goToCreatePage(){
+    public function show(){
+        
+    }
+
+    public function create(){
         return view('applications.create');
     }
 
-    public function goToSoftDeletePage(){
+    public function softDelete(){
         return view('applications.softDelete');
     }
 }
