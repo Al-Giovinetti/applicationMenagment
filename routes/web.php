@@ -19,6 +19,8 @@ Route::get('/applications',[PageController::class,'index'])->name('applications.
 
 Route::get('/applications/create',[PageController::class,'create'])->name('applications.create');
 
+Route::post('applications',[PageController::class,'store'])->name('applications.store');
+
 Route::get('/applications/softDelete',[PageController::class,'softDelete'])->name('applications.softDelete');
 
 Route::get('/applications/{application}',[PageController::class,'show'])->name('applications.show');
