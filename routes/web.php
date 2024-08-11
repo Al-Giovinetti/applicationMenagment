@@ -21,7 +21,7 @@ Route::get('/applications/create',[PageController::class,'create'])->name('appli
 
 Route::post('applications',[PageController::class,'store'])->name('applications.store');
 
-Route::get('/applications/softDelete',[PageController::class,'softDelete'])->name('applications.softDelete');
+Route::get('/applications/trashed',[PageController::class,'softDelete'])->name('applications.softDelete');
 
 Route::get('/applications/{application}',[PageController::class,'show'])->name('applications.show');
 

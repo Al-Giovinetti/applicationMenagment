@@ -35,8 +35,6 @@ class PageController extends Controller
         $newApplication->save();
 
         return redirect()->route('applications.show',$newApplication->id);
-
-
     }
 
     public function edit(Int $id){
@@ -61,5 +59,10 @@ class PageController extends Controller
         $application = jobApplication::findOrFail($id);
         $application->delete();
         return redirect()->route('applications.index')->with('delete',$id);
+    }
+
+    public function softDelete(){
+        $trashedApplications= jobApplication::withTrashed()->get();
+        return view('applications.softDelete',compact('trashedApplications'));
     }
 }
