@@ -15,7 +15,7 @@ use App\Http\Controllers\PageController as PageController;
 |
 */
 
-Route::get('/applications',[PageController::class,'index'])->name('applications.index');
+Route::get('/',[PageController::class,'index'])->name('applications.index');
 
 Route::get('/applications/create',[PageController::class,'create'])->name('applications.create');
 
@@ -24,4 +24,8 @@ Route::post('applications',[PageController::class,'store'])->name('applications.
 Route::get('/applications/softDelete',[PageController::class,'softDelete'])->name('applications.softDelete');
 
 Route::get('/applications/{application}',[PageController::class,'show'])->name('applications.show');
+
+Route::get('applocatiion/{id}/edit',[PageController::class,'edit'])->name('applications.edit');
+
+Route::put('applications/{id}/update', [PageController::class,'update'])->name('applications.update');
 

@@ -26,7 +26,7 @@
                         </div>
                         <p>Competenze : {{ $application['skills']}} </p>
                         <p> {{ $application['extra_info'] }}</p>
-                        <p class="text-center application-date"> Dati di applicazione : {{ convertData($application['created_at']) }}</p>
+                        <p class="text-center application-date"> Data di applicazione : {{ convertData($application['created_at']) }}</p>
                     </a>
                 </div>
             </div>

@@ -39,6 +39,24 @@ class PageController extends Controller
 
     }
 
+    public function edit(Int $id){
+        $applicationToModify = jobApplication::findOrFail($id);
+        return view('applications.edit', compact('applicationToModify'));
+    }
+
+    public function update(Request $request, Int $id){
+        $application = jobApplication::findOrFail($id);
+        $data = $request->all();
+
+        $application->agency_name = $data['agency_name'];
+        $application->agency_place = $data['agency_place'];
+        $application->skills = $data['skills'];
+        $application->extra_info = $data['extra_info'];
+        $application->save();
+
+        return redirect()->route('applications.show',$application->id)->with('update',$application->id);
+    }
+
     public function softDelete(){
         return view('applications.softDelete');
     }
