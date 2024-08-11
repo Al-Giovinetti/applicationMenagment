@@ -5,6 +5,11 @@
 @section('content')
     <div class="container">
         <div class="row">
+            @if (SESSION('respawn'))
+                <div class="alert alert-primary" role="alert">
+                    La candidatura con id {{ SESSION('respawn')}} è stata reinserita
+                </div>
+            @endif
             <div class="col-12 col-md-7 m-md-auto">
                 <div class="card d-flex flex-column align-items-center mt-5 p-3">
                     <p>ID: {{ $application['id']}}</p>

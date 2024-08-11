@@ -25,7 +25,10 @@
                             <td valign="middle">{{ $application->agency_place }}</td>
                             <td valign="middle">{{ $application->skills}}</td>
                             <td>
-                                <a href="" class="btn btn-warning">Respown</a>
+                                <form action="{{ route('applications.respawn', $application->id)}}" method="post" class="d-inline">
+                                    @csrf
+                                    <button type="submit" class="btn btn-warning">Respawn</button>
+                                </form>
                                 <form action="" method="POST" class="d-inline ms-3">
                                     @csrf
                                     @method('DELETE')

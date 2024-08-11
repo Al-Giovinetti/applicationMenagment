@@ -62,7 +62,13 @@ class PageController extends Controller
     }
 
     public function softDelete(){
-        $trashedApplications= jobApplication::withTrashed()->get();
+        $trashedApplications= jobApplication::onlyTrashed()->get();
         return view('applications.softDelete',compact('trashedApplications'));
+    }
+
+    public function respawn(int $id){
+        $application = jobApplication::onlyTrashed()->findOrFAil($id);
+        $application->restore();
+        return redirect()->route('applications.show',$application)->with('respawn',$application->id);
     }
 }
