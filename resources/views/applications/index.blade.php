@@ -16,6 +16,13 @@
 <div class="container">
     <h2>Lista completa delle tue candidature</h2>
     <div class="row">
+        @if (session('delete'))
+            <div class="col-12">
+                <div class="alert alert-primary" role="alert">
+                    La candidatura con id {{ SESSION('delete') }} è stata rimossa con successo
+                </div> 
+            </div>
+        @endif
         @foreach ($applications as $application)
             <div class="col-12 col-md-6 col-lg-4 d-flex">
                 <div class="card p-3 pb-5 w-100 my-2">
@@ -25,8 +32,15 @@
                             <p>{{ $application['agency_place'] }}</p>
                         </div>
                         <p>Competenze : {{ $application['skills']}} </p>
-                        <p> {{ $application['extra_info'] }}</p>
-                        <p class="text-center application-date"> Data di applicazione : {{ convertData($application['created_at']) }}</p>
+                        <p class="pb-4"> {{ $application['extra_info'] }}</p>
+                        <div class="application-bottombar d-flex justify-content-between align-items-center">
+                            <p class="text-center m-0"> Data candidatura: {{ convertData($application['created_at']) }}</p>
+                            <form action="{{ route('applications.destroy',$application->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Cancella</button>
+                            </form>
+                        </div>
                     </a>
                 </div>
             </div>

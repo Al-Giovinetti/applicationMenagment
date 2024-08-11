@@ -29,3 +29,5 @@ Route::get('applocatiion/{id}/edit',[PageController::class,'edit'])->name('appli
 
 Route::put('applications/{id}/update', [PageController::class,'update'])->name('applications.update');
 
+Route::delete('apploications/{id}/',[PageController::class,'destroy'])->name('applications.destroy');
+

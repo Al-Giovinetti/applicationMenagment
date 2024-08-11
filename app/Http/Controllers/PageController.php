@@ -57,7 +57,9 @@ class PageController extends Controller
         return redirect()->route('applications.show',$application->id)->with('update',$application->id);
     }
 
-    public function softDelete(){
-        return view('applications.softDelete');
+    public function destroy(int $id){
+        $application = jobApplication::findOrFail($id);
+        $application->delete();
+        return redirect()->route('applications.index')->with('delete',$id);
     }
 }

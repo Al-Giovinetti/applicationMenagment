@@ -38,10 +38,11 @@ div.card{
     }
 }
 
-div.card .application-date{
+div.card .application-bottombar{
     position: absolute;
-    bottom: 0;
-    width: 100%;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
 }
 
 
