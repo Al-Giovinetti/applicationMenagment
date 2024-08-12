@@ -71,4 +71,11 @@ class PageController extends Controller
         $application->restore();
         return redirect()->route('applications.show',$application)->with('respawn',$application->id);
     }
+
+    public function finalDelete(Int $id){
+        $application = jobApplication::onlyTrashed()->findOrFAil($id);
+        $applicationID = $application->id;
+        $application->forceDelete();
+        return redirect()->route('applications.index')->with('finalDelete',$applicationID);
+    }
 }

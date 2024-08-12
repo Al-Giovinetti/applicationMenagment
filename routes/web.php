@@ -32,3 +32,5 @@ Route::put('applications/{id}/update', [PageController::class,'update'])->name('
 Route::delete('apploications/{id}/',[PageController::class,'destroy'])->name('applications.destroy');
 
 Route::post('applications/{id}/respawn',[PageController::class,'respawn'])->name('applications.respawn');
+
+Route::delete('applications/{id}/finalDelete',[PageController::class,'finalDelete'])->name('application.finalDelete');

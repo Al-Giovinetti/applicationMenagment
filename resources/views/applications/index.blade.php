@@ -22,6 +22,12 @@
                     La candidatura con id {{ SESSION('delete') }} è stata rimossa con successo
                 </div> 
             </div>
+        @elseif(session('finalDelete'))
+            <div class="col-12">
+                <div class="alert alert-warning" role="alert">
+                    La candidatura con id {{ SESSION('finalDelete') }} è stata rimossa definitivamente
+                </div> 
+            </div>
         @endif
         @foreach ($applications as $application)
             <div class="col-12 col-md-6 col-lg-4 d-flex">

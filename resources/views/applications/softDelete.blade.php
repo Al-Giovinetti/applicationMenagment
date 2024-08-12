@@ -29,10 +29,10 @@
                                     @csrf
                                     <button type="submit" class="btn btn-warning">Respawn</button>
                                 </form>
-                                <form action="" method="POST" class="d-inline ms-3">
+                                <form action="{{route('application.finalDelete',$application->id)}}" method="POST" class="d-inline ms-3">
                                     @csrf
                                     @method('DELETE')
-                                    <a href="" class="btn btn-danger">Cancella x sempre</a>
+                                    <button type="submit" class="btn btn-danger">Cancella x sempre</button>
                                 </form>
                             </td>
                         </tr>          

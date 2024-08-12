@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <h1 class="text-center">Aggiungi una nuova candidatura</h1>
+            <h1 class="text-center mt-2">Modifica le informazioni della candidatura</h1>
             <div class="col-8">
                 <form action="{{ route('applications.update',$applicationToModify['id'])}}" method="POST" class="card p-3 mt-4">
                     @csrf
